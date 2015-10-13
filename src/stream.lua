@@ -30,7 +30,7 @@ function read.read(uid, did)
   local client_status = "OK"
   local red_client = read.init()
   local headers = ngx.req.get_headers()
-  local stream = headers['accept'] == 'text/event-stream'
+  local stream = headers['accept'] == 'text/x.textdash-plain-stream'
   if stream then
     local on_abort = function()
       ngx.log(ngx.ERR, "ABORTED")
@@ -39,7 +39,7 @@ function read.read(uid, did)
       ngx.exit(499)
     end
     ngx.on_abort(on_abort)
-    ngx.header["Content-Type"] = "text/event-stream"
+    ngx.header["Content-Type"] = "text/x.textdash-plain-stream"
     ngx.send_headers()
   end
   local items, err, list_key, res

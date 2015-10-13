@@ -24,7 +24,7 @@ curl -4 https://textdash.xyz/yourapikey/applicationxyz ==> replies "im log data"
 
 Features:
 
-* read a dashboard with header "accept: text/event-stream" and updates will be streamed to you
+* read a dashboard with header "accept: text/x.textdash-plain-stream" and updates will be streamed to you
 * as many dashboards as you would like
 * logs roll around on a particular dashboard
 ]])
